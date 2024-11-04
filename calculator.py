@@ -3,23 +3,29 @@ class Calculator:
         return a + b
 
     def subtract(self, a, b):
-        return b - a
+        return a - b
 
     def multiply(self, a, b):
         result = 0
         for i in range(b+1):
-            result = self.add(result, a)
-        return result
+            result = 0
+             #= self.add(result, a)
+            if a > 0 or a == 0:
+                result = result +a
+            else:
+                result = result + a
+        return result - a
 
     def divide(self, a, b):
         result = 0
+        if b == 0 : return "error"
         while a > b:
             a = self.subtract(a, b)
             result += 1
-        return result
+        return result +1
     
     def modulo(self, a, b):
-        while a <= b:
+        while a >= b:
             a = a-b
         return a
 
